@@ -1,0 +1,26 @@
+[package]
+name = "ym2413-rust"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "The Yamaha YM2413 (OPLL) and the VRC7's DS1001, transcribed from, and proven equivalent to, ym2413-python"
+license = "MIT"
+readme = "README.md"
+publish = false
+
+[lib]
+name = "ym2413"
+
+# The core imports nothing by default. The `serde` feature makes `OPLL` and `OPLLVariant`
+# serialisable (save states for a host).
+[features]
+serde = ["dep:serde"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"], optional = true }
+
+[dev-dependencies]
+bincode = "1"
+
+[profile.release]
+debug = 1
