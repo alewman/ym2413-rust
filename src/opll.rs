@@ -36,8 +36,8 @@
 
 use crate::tables::{
     tables, CARRIER_SLOT, COPY_SLOT, ENVELOPE_PATTERNS, MODULATOR_SLOT, MULTIPLIER_X2,
-    SLOT_BASS_DRUM, SLOT_CHANNEL, SLOT_CYMBAL, SLOT_HI_HAT, SLOT_IS_CARRIER, SLOT_SNARE,
-    SLOT_TOM, TREMOLO, TREMOLO_PERIOD, VIBRATO_PERIOD,
+    SLOT_BASS_DRUM, SLOT_CHANNEL, SLOT_CYMBAL, SLOT_HI_HAT, SLOT_IS_CARRIER, SLOT_SNARE, SLOT_TOM,
+    TREMOLO, TREMOLO_PERIOD, VIBRATO_PERIOD,
 };
 use crate::variants::{OPLLVariant, Row};
 
@@ -769,8 +769,8 @@ impl OPLL {
         let high = self.registers[0x20 + channel] as i32;
         let f_number_top = ((high & 1) << 3) | (self.registers[0x10 + channel] >> 5) as i32;
         let mut attenuation = self.base[operator]
-            + tables.key_scale_steps[self.key_scale[operator] as usize]
-                [((high >> 1) & 7) as usize][f_number_top as usize]
+            + tables.key_scale_steps[self.key_scale[operator] as usize][((high >> 1) & 7) as usize]
+                [f_number_top as usize]
             + level;
         if self.tremolo_on[operator] != 0 {
             attenuation += self.tremolo; // spec 10.1 (measured)

@@ -115,7 +115,11 @@ fn trace(lines: &[&str]) -> Vec<String> {
             "run" => chip.run(args[0].parse().unwrap()),
             "reset" => chip.reset(),
             "trace" => {
-                chip.trace = if args[0] == "1" { Some(Vec::new()) } else { None };
+                chip.trace = if args[0] == "1" {
+                    Some(Vec::new())
+                } else {
+                    None
+                };
             }
             "take" => {
                 let pairs = chip.take_outputs();

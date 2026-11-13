@@ -52,7 +52,10 @@ pub fn tables() -> &'static Tables {
 fn log_sin() -> [i32; 256] {
     let mut table = [0; 256];
     for (i, entry) in table.iter_mut().enumerate() {
-        *entry = (-((i as f64 + 0.5) * std::f64::consts::PI / 512.0).sin().log2() * 256.0)
+        *entry = (-((i as f64 + 0.5) * std::f64::consts::PI / 512.0)
+            .sin()
+            .log2()
+            * 256.0)
             .round_ties_even() as i32;
     }
     table

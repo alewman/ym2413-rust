@@ -129,7 +129,16 @@ const fn vibrato_offsets() -> [[i32; 8]; 8] {
     let mut table = [[0; 8]; 8];
     let mut top = 0;
     while top < 8 {
-        table[top as usize] = [0, top >> 1, top, top >> 1, 0, -(top >> 1), -top, -(top >> 1)];
+        table[top as usize] = [
+            0,
+            top >> 1,
+            top,
+            top >> 1,
+            0,
+            -(top >> 1),
+            -top,
+            -(top >> 1),
+        ];
         top += 1;
     }
     table
