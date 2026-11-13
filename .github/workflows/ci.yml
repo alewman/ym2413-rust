@@ -1,0 +1,30 @@
+name: CI
+
+# Kept small: main and pull requests only, and a newer run on the same ref cancels the older
+# one. `cargo test` is rung 1 (ym2413-python's tests, transcribed) and the save-state test.
+# Rungs 2 to 4 need the reference, ym2413-python, and run locally (docs/status.md).
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: fmt, clippy, test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - run: cargo fmt --check
+      - run: cargo clippy --release --all-targets --features serde -- -D warnings
+      - run: cargo test --release --features serde
