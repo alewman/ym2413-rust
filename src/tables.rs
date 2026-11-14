@@ -1,7 +1,7 @@
 //! The chip's fixed tables, each with its source and standing.
 //!
 //! Section numbers ("spec 6.3") are those of ym2413-python's `docs/spec.md`; S numbers are the
-//! sources of its `docs/phase0.md`; its `docs/provenance-audit.md` has each statement's chain.
+//! sources of its `docs/phase0.md`; its `docs/provenance.md` has each statement's chain.
 //! Nothing here differs between the YM2413 and the DS1001: what differs is in `variants.rs`.
 //!
 //! A transcription of ym2413-python's `tables.py` (at f88dccf): same names, same order, same

@@ -2,9 +2,9 @@
 //!
 //! Written from ym2413-python's `docs/spec.md`, not from another program. Every rule below names
 //! the spec statement it implements, or says CHOICE (nothing speaks to it and this
-//! core had to pick) or PROVISIONAL (an unsettled item taken at the hand-off brief's
-//! default: T numbers, `docs/handoff-brief.md`). `docs/provenance-audit.md` has
-//! the chain behind each statement.
+//! core had to pick) or PROVISIONAL (an unsettled item taken at a recorded default:
+//! T numbers, ym2413-python's `docs/provenance.md`). That file also has the chain
+//! behind each statement.
 //!
 //! The unit of time is the slot: four input clocks, one pass through the chip's one
 //! operator circuit (spec 2.3). A sample is eighteen slots. Operators are numbered

@@ -1,7 +1,8 @@
 //! The provisional defaults, one labelled test each.
 //!
 //! These are not judges. Each pins a value that no source above an emulator settles
-//! (the hand-off brief's T1 to T15, and the spec's unknowns U20, U22, U23, U24), so
+//! (T1 to T15 of ym2413-python's docs/provenance.md, and the spec's unknowns U20, U22,
+//! U23, U24), so
 //! that changing one is a deliberate act: a measurement or a document that settles
 //! it changes the value, this test, and the spec's entry together. Every docstring
 //! starts with PROVISIONAL and names the item.

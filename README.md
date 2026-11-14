@@ -9,7 +9,8 @@ family's restarted, document-built OPLL core.
 and `variants.py` function for function, in the same order, with the same names and the same
 spec citations and CHOICE / PROVISIONAL labels. Nothing is redesigned; where Rust forced a
 difference the module header says what it is. The package is `ym2413-rust`, the crate `ym2413`;
-it has no dependencies and is not published (use it by path).
+it has no dependencies and is not on crates.io (use it by git revision or by path). It is used
+by famicom-rust and famicom-rust-fast for the VRC7.
 
 ## Using the core
 
@@ -70,7 +71,13 @@ scripts/rung4.sh
 cargo run --release --example speed
 ```
 
-[docs/handoff-brief.md](docs/handoff-brief.md) is the plan the crate was built from.
+## History
+
+ym2413-python was rebuilt in November 2026. Its predecessor followed a GPL-licensed model's
+source code too closely to be published under the MIT licence, and was withdrawn, as was the
+Rust port made from it. The Python core is now written from manufacturer documents and hardware
+measurements under the rules in its `docs/restart.md`; this crate is transcribed from that
+rebuilt core alone.
 
 ## Licence
 

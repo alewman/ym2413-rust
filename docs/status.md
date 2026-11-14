@@ -1,13 +1,28 @@
 # Status
 
-2026-11-13. **The ladder passes: all four rungs.** Local only: no remote, nothing pushed, not yet
-adopted by a board.
+2026-11-13. **The ladder passes: all four rungs.** The crate is proven equivalent to
+ym2413-python at the pin below. Used by famicom-rust and famicom-rust-fast (the VRC7).
 
 Reference: ym2413-python `f88dccf174780d7c958a45129ce9e337450f387b`, cloned into the git-ignored
 `external/ym2413-python` (`scripts/fetch_ym2413python.sh`); its `reference/` directory was not
 opened (and is not in the clone). Run on Linux x86_64, rustc 1.93.1 (clippy 0.1.99 from the
-rustup stable toolchain), the reference on PyPy 7.3.23 (Python 3.11.15,
-`/data/emu/ym2413-python/.venv-pypy/bin/python`).
+rustup stable toolchain), the reference on PyPy 7.3.23 (Python 3.11.15, the `.venv-pypy` of a
+ym2413-python checkout beside this repository).
+
+## How it was built
+
+A transcription of ym2413-python alone, under that repository's `docs/restart.md` rules:
+
+- The only source is ym2413-python at the pin: its code, tests, scripts and docs. No GPL or
+  LGPL source, no Nuked model and none of the withdrawn earlier cores were read, and no
+  closed-box model was run.
+- Transcribed, not redesigned: function for function, same order, same names (Rust case
+  conventions aside), same comments, spec citations and CHOICE / PROVISIONAL labels. Where
+  Rust forces a difference the module header says so (summarised below).
+- The variants stay data; emu2413's MIT notice travels with its instrument table into
+  `src/variants.rs` and the README.
+- Where the Python looks wrong it is not fixed here: behaviour stays identical, and the case
+  is listed under "Suspected errors in the reference".
 
 | Rung | What | Result | Command |
 | --- | --- | --- | --- |
@@ -18,8 +33,10 @@ rustup stable toolchain), the reference on PyPy 7.3.23 (Python 3.11.15,
 
 `cargo test --release` (rung 1) needs nothing else; CI runs it with `cargo fmt --check` and
 `cargo clippy --all-targets -D warnings`, with the `serde` feature. Rungs 2 to 4 need the
-reference (PyPy is found at the path above or as `pypy3`; `PYTHON=` overrides, `JOBS=` sets the
-parallelism, default 8). Traces go to the git-ignored `external/lockstep/` and
+reference (PyPy is found in `../ym2413-python/.venv-pypy` or as `pypy3`; `PYTHON=` overrides,
+`YM2413_PYTHON=` names another reference checkout, `JOBS=` sets the parallelism, default 8).
+The two wiki-parsing tests of rung 1 look for famicom-python and sms-python beside this
+repository; `FAMICOM_PYTHON_DIR` and `SMS_PYTHON_DIR` name other checkouts. Traces go to the git-ignored `external/lockstep/` and
 `external/streams/`.
 
 ### Rung 4: which rungs catch the faults
@@ -75,7 +92,8 @@ In its tests:
 
 ## The API a board uses
 
-Crate `ym2413` (package `ym2413-rust`; `ym2413-rust = { path = "../ym2413-rust" }`, then
+Crate `ym2413` (package `ym2413-rust`; `ym2413-rust = { path = "../ym2413-rust" }` or a git
+revision, then
 `use ym2413::...`). No dependencies. The names are ym2413-python's (its `docs/api.md`):
 
 ```rust
@@ -129,9 +147,5 @@ states.
 
 ## Open
 
-- No board uses the crate yet (sms-python's and famicom-python's Rust boards would).
-- No remote: creating one, and making it public, is the owner's call. Before that, the
-  emu2413-derived instrument table's notice travels in `src/variants.rs` and the README, as in
-  the reference.
 - The wasm32 build is untried; the library is plain `std` with no dependencies.
 - Speed: correct, not fast; a `-fast` fork is the place for a whole-sample path.
