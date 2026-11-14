@@ -3,7 +3,8 @@
 //! S6 is the NESdev wiki's "VRC7 audio" page, pinned in famicom-python at
 //! `reference/nesdev-wiki/VRC7_audio.wiki`; S9 is SMS Power's "YM2413" page, pinned
 //! in sms-python at `reference/smspower-wiki/YM2413.pmwiki`. Tests that parse a
-//! pinned file skip when the sibling repository is absent. Every test here is tier
+//! pinned file skip when the sibling repository is absent (`FAMICOM_PYTHON_DIR` and
+//! `SMS_PYTHON_DIR` name checkouts kept elsewhere). Every test here is tier
 //! 3: it proves agreement with the community's account, not that account. Where the
 //! account is about the VRC7 and the core applies it to the YM2413 too, the YM2413
 //! case is PROVISIONAL (T4) and says so.
@@ -22,12 +23,19 @@ use common::*;
 use ym2413::variants::Row;
 use ym2413::{OPLLVariant, DS1001, OPLL, YM2413};
 
+/// A board's checkout: the directory the environment variable names, else beside this repository.
+fn sibling(variable: &str, name: &str) -> PathBuf {
+    std::env::var_os(variable)
+        .map(PathBuf::from)
+        .unwrap_or_else(|| root().join("..").join(name))
+}
+
 fn wiki() -> PathBuf {
-    root().join("../famicom-python/reference/nesdev-wiki/VRC7_audio.wiki")
+    sibling("FAMICOM_PYTHON_DIR", "famicom-python").join("reference/nesdev-wiki/VRC7_audio.wiki")
 }
 
 fn sms_power() -> PathBuf {
-    root().join("../sms-python/reference/smspower-wiki/YM2413.pmwiki")
+    sibling("SMS_PYTHON_DIR", "sms-python").join("reference/smspower-wiki/YM2413.pmwiki")
 }
 
 /// One row of the wiki's tables: "  1 | 03 21 05 06 E8 81 42 27 | Buzzy Bell" or,
@@ -74,7 +82,7 @@ fn wiki_rows() -> Option<WikiRows> {
     let path = wiki();
     let Ok(text) = std::fs::read_to_string(&path) else {
         eprintln!(
-            "SKIPPED: {} is absent (famicom-python not beside this repository)",
+            "SKIPPED: {} is absent (no famicom-python checkout; see FAMICOM_PYTHON_DIR)",
             path.display()
         );
         return None;
