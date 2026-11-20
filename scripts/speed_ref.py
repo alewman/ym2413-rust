@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """examples/speed.rs on ym2413-python: nine channels sounding, chip time over wall time.
 
     PYTHONPATH=REFERENCE/src pypy3 scripts/speed_ref.py [seconds, default 20]

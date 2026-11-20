@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
 # Rung 2: register-stream lockstep. Seeded random and scripted write/run scripts for both
 # variants (scripts/lockstep_gen.py) run on both cores; every slot word, every output pair,
 # every take_samples() value, the whole state at checkpoints and the computed tables must be

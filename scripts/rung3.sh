@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
 # Rung 3: every stream of ym2413-python's validation/streams.py (scripts/export_streams.py),
 # through both cores and both variants: the output pairs and every slot word (as per-take
 # hashes) and the final state must be identical. To find where one differs, change its

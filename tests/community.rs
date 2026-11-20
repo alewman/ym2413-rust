@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Rung 3: community documents whose accounts rest on hardware (tier 3).
 //!
 //! S6 is the NESdev wiki's "VRC7 audio" page, pinned in famicom-python at

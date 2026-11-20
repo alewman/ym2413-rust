@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Run lockstep scripts (scripts/lockstep_gen.py, scripts/export_streams.py) on ym2413-python
 and print the trace that examples/ym2413-trace.rs prints for this crate.
 

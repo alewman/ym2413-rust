@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The provisional defaults, one labelled test each.
 //!
 //! These are not judges. Each pins a value that no source above an emulator settles

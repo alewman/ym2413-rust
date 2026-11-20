@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The speed as a real-time factor: a YM2413 with nine channels sounding (ROM voices 1 to 9,
 //! full volume, keyed on), run for some seconds of chip time; chip time over wall time.
 //! `scripts/speed_ref.py` does the same on ym2413-python.

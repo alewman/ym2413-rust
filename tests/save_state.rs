@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Save states (the `serde` feature; not in ym2413-python, whose state is plain attributes a
 //! board copies): a chip serialised half way through a stream and restored carries on exactly as
 //! the one that was never stopped, for both variants and for a variant that is neither.

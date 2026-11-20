@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Run lockstep scripts (rungs 2 and 3) on this crate and print the trace that
 //! `scripts/lockstep_ref.py` prints for ym2413-python. The two are compared byte for byte.
 //!

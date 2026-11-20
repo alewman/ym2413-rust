@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Shared by the tests: ways to drive the chip as a board would and to read it.
 //!
 //! A transcription of ym2413-python's `tests/helpers.py` (at f88dccf), plus two pieces the Rust

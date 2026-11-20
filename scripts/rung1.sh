@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
 # Rung 1: every test in ym2413-python's tests/ (contract, manual, measured, community,
 # provisional), transcribed to tests/*.rs, the strict expected failure kept as one.
 set -euo pipefail

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
 # The reference, ym2413-python, at the pin, into external/ym2413-python. It imports nothing, so
 # no venv: the scripts run it with PYTHONPATH (PyPy when found).
 # Usage: scripts/fetch_ym2413python.sh [source repo, default ../ym2413-python]

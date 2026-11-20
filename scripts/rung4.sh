@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: MIT
 # Rung 4: the 30 seeded faults of ym2413-python's validation/faults.py, broken the same way in
 # this crate (scripts/seeded_faults.py): each must fail rung 1, 2 or 3. Writes rung 2's and
 # rung 3's reference traces first if they are not there.

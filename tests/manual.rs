@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Rung 1: Yamaha's application manual (S1), by section, table and printed page.
 //!
 //! Every check is a sentence or a table row of "FM Operator Type-LL (OPLL)

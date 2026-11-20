@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Rung 2a: what was measured on a real YM2413 (S4), as its write-ups state it.
 //!
 //! S4 is the openMSX YM2413 reverse-engineering project: write-ups by Wouter

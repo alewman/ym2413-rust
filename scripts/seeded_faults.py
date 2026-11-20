@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Rung 4: can each rung fail? The 30 seeded faults of ym2413-python's validation/faults.py,
 the same rules broken in this crate's source, one textual change each.
 

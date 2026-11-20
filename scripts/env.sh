@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 # Sourced by the rung scripts: the reference, its interpreter and the toolchain.
 ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 REF=${YM2413_PYTHON:-"$ROOT/external/ym2413-python"}

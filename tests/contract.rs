@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! Rung 0: the contract with the boards (ym2413-python's docs/api.md, docs/validation.md).
 //!
 //! Not a judge of the chip: these keep the core usable by sms-python and

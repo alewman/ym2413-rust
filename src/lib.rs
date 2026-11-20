@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The Yamaha YM2413 (OPLL) and the Konami VRC7's DS1001.
 //!
 //! Written from documents and measurements (ym2413-python's `docs/spec.md`), not from another

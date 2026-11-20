@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The chip's fixed tables, each with its source and standing.
 //!
 //! Section numbers ("spec 6.3") are those of ym2413-python's `docs/spec.md`; S numbers are the

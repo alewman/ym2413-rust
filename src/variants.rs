@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The two parts this core models, as data.
 //!
 //! Section numbers are those of ym2413-python's `docs/spec.md`; S, C, U and T numbers are its

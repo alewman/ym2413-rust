@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: MIT
 name: CI
 
 # Kept small: main and pull requests only, and a newer run on the same ref cancels the older

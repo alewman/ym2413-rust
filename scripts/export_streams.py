@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Write rung 3's scripts: every stream of ym2413-python's validation/streams.py, for both
 variants, in the lockstep script format (scripts/lockstep_gen.py), replayed as the reference's
 own harness replays them (run(4 x cycles to the event), write, and run to the stream's end).

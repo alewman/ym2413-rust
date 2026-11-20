@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
 """Write register-stream lockstep scripts (rung 2): seeded random and scripted write/run
 sequences for both variants, which both cores run (scripts/lockstep_ref.py,
 examples/ym2413-trace.rs).

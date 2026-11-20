@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 //! The chip: registers, eighteen operators, and the sequence of output words.
 //!
 //! Written from ym2413-python's `docs/spec.md`, not from another program. Every rule below names
