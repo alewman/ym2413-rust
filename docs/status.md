@@ -3,7 +3,9 @@
 2026-11-13. **The ladder passes: all four rungs.** The crate is proven equivalent to
 ym2413-python at the pin below. Used by famicom-rust and famicom-rust-fast (the VRC7).
 
-Reference: ym2413-python `f88dccf174780d7c958a45129ce9e337450f387b`, cloned into the git-ignored
+Reference: ym2413-python `67fdb1e983b62a5c1334fead4e8b157af45cd3a1` (`f88dccf` until the core's 2026-11-22
+history rewrite took its GPL harness out of every commit; the same code; the transcription's
+citations name `f88dccf`), cloned into the git-ignored
 `external/ym2413-python` (`scripts/fetch_ym2413python.sh`); its `reference/` directory was not
 opened (and is not in the clone). Run on Linux x86_64, rustc 1.93.1 (clippy 0.1.99 from the
 rustup stable toolchain), the reference on PyPy 7.3.23 (Python 3.11.15, the `.venv-pypy` of a

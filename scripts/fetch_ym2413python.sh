@@ -5,7 +5,7 @@
 # Usage: scripts/fetch_ym2413python.sh [source repo, default ../ym2413-python]
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-PIN=f88dccf174780d7c958a45129ce9e337450f387b
+PIN=67fdb1e983b62a5c1334fead4e8b157af45cd3a1
 SRC=${1:-"$ROOT/../ym2413-python"}
 DEST="$ROOT/external/ym2413-python"
 mkdir -p "$ROOT/external"
